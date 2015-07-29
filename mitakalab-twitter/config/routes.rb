@@ -1,8 +1,6 @@
-DemoApp::Application.routes.draw do
-  resources :microposts
-
-  resources :users
-
+MitakalabTwitter::Application.routes.draw do
+  get "users/index"
+  get "users/show/:username" => "users#show"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
