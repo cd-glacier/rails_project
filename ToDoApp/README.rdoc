@@ -1,0 +1,6 @@
+#ToDoList App from dotinstall
+
+#what to do
+ - make and edit project
+ - make and edit ToDoList in the project
+
