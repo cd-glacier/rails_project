@@ -9,3 +9,6 @@
 
 ##ToDoApp
  > http://dotinstall.com/lessons/basic_rails_v2
+
+##sample_ap
+ > http://railstutorial.jp/chapters/static-pages?version=4.0#top
