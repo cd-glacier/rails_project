@@ -1,5 +1,16 @@
 DiaryApp::Application.routes.draw do
-	get "users" => "users#index"
+	get "/users" => "users#index"
+	get "/users/new" => "users#new"
+	post "/users" => "users#create"
+	get "/users/:id" => "users#show"  #useless
+	#delete "/users/:id" => "users#destroy"
+	#resource :usesr
+
+	get "/diaries/:id" => "diaries#index"
+	get "/diaries/:id/new" => "diaries#new"
+	post "/diaries/:id/create" => "diaries#create"
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

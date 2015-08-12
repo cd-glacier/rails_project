@@ -1,0 +1,8 @@
+<h1>DIARY</h1>
+
+<h3>username</h3>
+<p><%= @user.id %>:
+<%= @user.username %></p>
+
+
+<%= link_to "delete this user", users_path(@user.id), method: :delete, data: {confirm: "are you sure?"} %>

@@ -5,3 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+@user = User.new
+@user.username = "glacier"
+@user.save
+
+@diary = Diary.new
+@diary.id = 3
+@diary.date = 20150812
+@diary.content = "I created diary app"
+@diary.save

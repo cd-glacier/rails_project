@@ -1,0 +1,16 @@
+<h2><%= @user.username %> 's DIARY</h2>
+
+<% @diaries.each do |diary| %>
+	<% if diary.id == @user.id %>
+
+	<!--
+		date = <%= diary.date %>
+		year = date / 10000
+		month = year - date/100
+		date = date - year - month
+	-->
+
+		<p>date:<%= diary.date %></p>
+		<p><%= diary.content %></p>
+	<% end %>
+<% end %>
