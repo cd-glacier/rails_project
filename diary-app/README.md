@@ -1,6 +1,3 @@
-##to do 
- - security 
- - make model
- - make controller
- - make view
-
+##Function
+ - create user
+ - wirte diary per user
