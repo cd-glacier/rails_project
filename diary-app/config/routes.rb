@@ -5,10 +5,12 @@ DiaryApp::Application.routes.draw do
 	get "/users/:id" => "users#show"  #useless
 	#delete "/users/:id" => "users#destroy"
 	#resource :usesr
+	resources :users, only: [:edit, :destroy, :update]
 
-	get "/diaries/:id" => "diaries#index"
-	get "/diaries/:id/new" => "diaries#new"
+	get "/diaries/:id" => "diaries#index", as: :diaries
+	get "/diaries/:id/new" => "diaries#new", as: :diaries_new
 	post "/diaries/:id/create" => "diaries#create"
+	#resources :diaries, only: [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,6 @@
+<h3>user edit</h3>
+
+<%= render 'form' %>
+
+<%= link_to "[delete]", user_path(@user.id), method: :delete, data: {confirm: "are you sure?"} %>
+

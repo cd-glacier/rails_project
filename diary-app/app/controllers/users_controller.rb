@@ -1,9 +1,9 @@
 class UsersController < ApplicationController
+	before_action :set_params_id, only: [:show, :destroy]
+	before_action :set_User_find , only: [:show, :edit, :update, :destroy]
+
 	def index
 		@users = User.all
-	end
-
-	def show
 	end
 
 	def new
@@ -18,13 +18,32 @@ class UsersController < ApplicationController
 	end
 
 	def show
-		@id = params[:id]
-		@user = User.find(params[:id])
 	end
 
 	def destroy
-		@id = params[:id]
 		@user.destroy
 		redirect_to users_path
 	end
+
+	def edit
+	end
+
+	def update
+		@user.update(params_username)
+		redirect_to users_path
+	end
+
+	private
+		def set_User_find
+			@user = User.find(params[:id])
+		end
+
+		def set_params_id
+			@id = params[:id]
+		end
+
+		def params_username
+			params[:user].permit(:username)
+		end
+
 end

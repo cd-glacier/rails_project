@@ -13,6 +13,11 @@ class DiariesController < ApplicationController
 	def create
 		@id = params[:id]
 		@user = User.find(params[:id])
+		@diary = Diary.new
+		@diary.id = @id
+		@diary.date = params[:diary][:date]
+		@diary.content = params[:diary][:content]
+		@diary.save
 		redirect_to diaries_path(@user.id)
 	end
 

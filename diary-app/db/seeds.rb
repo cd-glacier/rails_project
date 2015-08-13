@@ -12,7 +12,7 @@
 @user.save
 
 @diary = Diary.new
-@diary.id = 3
+@diary.number = 3
 @diary.date = 20150812
 @diary.content = "I created diary app"
 @diary.save

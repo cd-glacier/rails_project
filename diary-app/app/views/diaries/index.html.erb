@@ -1,7 +1,7 @@
 <h2><%= @user.username %> 's DIARY</h2>
 
 <% @diaries.each do |diary| %>
-	<% if diary.id == @user.id %>
+	<% if diary.number == @user.id %>
 
 	<!--
 		date = <%= diary.date %>
@@ -14,3 +14,5 @@
 		<p><%= diary.content %></p>
 	<% end %>
 <% end %>
+
+<%= link_to "[write diary]", diaries_new_path(@user.id) %>
