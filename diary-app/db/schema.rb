@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150812061301) do
+ActiveRecord::Schema.define(version: 20150813183759) do
 
   create_table "diaries", force: true do |t|
     t.integer  "date"
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "number"
   end
 
   create_table "users", force: true do |t|

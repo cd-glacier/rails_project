@@ -2,14 +2,13 @@ DiaryApp::Application.routes.draw do
 	get "/users" => "users#index"
 	get "/users/new" => "users#new"
 	post "/users" => "users#create"
-	get "/users/:id" => "users#show"  #useless
 	#delete "/users/:id" => "users#destroy"
 	#resource :usesr
 	resources :users, only: [:edit, :destroy, :update]
 
 	get "/diaries/:id" => "diaries#index", as: :diaries
 	get "/diaries/:id/new" => "diaries#new", as: :diaries_new
-	post "/diaries/:id/create" => "diaries#create"
+	post "/diaries/:id" => "diaries#create"
 	#resources :diaries, only: [:index]
 
 
