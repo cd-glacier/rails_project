@@ -1,18 +1,33 @@
-<h2><%= @user.username %> 's DIARY</h2>
+<%- model_class = Diary -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:date) %></th>
+      <th><%= model_class.human_attribute_name(:content) %></th>
+      <th><%= model_class.human_attribute_name(:number) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+		<% @diaries.each do |diary| %>
+			<% if diary.number == @user.id %>
+				<tr>
+					<td><%= link_to diary.id, diaries_path(diary.id) %></td>
+					<td><%= diary.date %></td>
+					<td><%= diary.content %></td>
+					<td><%= diary.number %></td>
+					<td><%=l diary.created_at %></td>
+				</tr>
+    	<% end %>
+    <% end %>
+  </tbody>
+</table>
 
-<% @diaries.each do |diary| %>
-	<% if diary.number == @user.id %>
-
-	<!--
-		date = <%= diary.date %>
-		year = date / 10000
-		month = year - date/100
-		date = date - year - month
-	-->
-
-		<p>date:<%= diary.date %></p>
-		<p><%= diary.content %></p>
-	<% end %>
-<% end %>
-
-<%= link_to "[write diary]", diaries_new_path(@user.id) %>
+<%= link_to t('.write', :default => t("helpers.links.new")),
+            diaries_new_path,
+            :class => 'btn btn-primary' %>

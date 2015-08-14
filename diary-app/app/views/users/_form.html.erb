@@ -1,16 +1,14 @@
-<%= form_for @user do |f| %>
-	<p>
-		<%= f.label :username %>
-		<%= f.text_field :username %>
-		<!--
-		<% if @user.errors.any? %>
-		»-»-<%= @user.errors.messages[:title][0] %>
-	»-<% end %>
-		-->
-	</p>
+<%= form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :username, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :username, :class => 'text_field' %>
+    </div>
+  </div>
 
-	<p>
-		<%= f.submit %>
-	</p>
- 
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                users_path, :class => 'btn' %>
+  </div>
 <% end %>
